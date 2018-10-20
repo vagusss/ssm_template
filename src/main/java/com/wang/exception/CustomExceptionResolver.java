@@ -30,6 +30,7 @@ public class CustomExceptionResolver implements HandlerExceptionResolver {
 
         ModelAndView modelAndView = new ModelAndView();
 
+        System.out.println(exception.getMessage());
         //将错误信息传到页面
         modelAndView.addObject("message", exception.getMessage());
 

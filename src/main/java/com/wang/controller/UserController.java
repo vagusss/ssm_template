@@ -1,5 +1,6 @@
 package com.wang.controller;
 
+import com.wang.exception.CustomException;
 import com.wang.pojo.User;
 import com.wang.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,14 @@ public class UserController {
 
     @RequestMapping("all")
     @ResponseBody
-    public List<User> getAllUsers(){
+    public List<User> getAllUsers() throws CustomException {
         List<User> users = userService.getAllUsers();
+//        try {
+//            int i = 10 / 0;
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            throw new CustomException("error..");
+//        }
         return users;
     }
 
